@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.3 on win32)" generated="20200402 15:45:00.293" rpa="false">
+<suite id="s1" name="Robotframwork Atda" source="D:\Trainning\robotframwork_atda">
+<suite id="s1-s1" name="Testsuites" source="D:\Trainning\robotframwork_atda\testsuites">
+<suite id="s1-s1-s1" name="Atda Web" source="D:\Trainning\robotframwork_atda\testsuites\atda_web">
+<suite id="s1-s1-s1-s1" name="Account Testsuite Testbed" source="D:\Trainning\robotframwork_atda\testsuites\atda_web\account_testsuite_testbed.robot">
+<test id="s1-s1-s1-s1-t1" name="ATDA001 Account page - Verify create a new account with invalid information - WIN1">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Hello</arg>
+</arguments>
+<status status="PASS" starttime="20200402 15:45:00.778" endtime="20200402 15:45:00.779"></status>
+</kw>
+<kw name="Open Browser" library="browser_01">
+<doc>Launch web browser with ATDA server info</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20200402 15:45:00.779" level="INFO">Creating driver for non Web app: ANY</msg>
+<status status="PASS" starttime="20200402 15:45:00.779" endtime="20200402 15:45:11.743"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20200402 15:45:16.755" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200402 15:45:11.744" endtime="20200402 15:45:16.755"></status>
+</kw>
+<kw name="Close Browser" library="browser_01">
+<doc>Close web browser</doc>
+<msg timestamp="20200402 15:45:16.754" level="INFO">Start function close_browser</msg>
+<msg timestamp="20200402 15:45:16.942" level="INFO">close_browser successfully</msg>
+<status status="PASS" starttime="20200402 15:45:16.755" endtime="20200402 15:45:16.942"></status>
+</kw>
+<status status="PASS" starttime="20200402 15:45:00.777" endtime="20200402 15:45:16.942" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20200402 15:45:00.597" endtime="20200402 15:45:16.949"></status>
+</suite>
+<status status="PASS" starttime="20200402 15:45:00.595" endtime="20200402 15:45:16.950"></status>
+</suite>
+<status status="PASS" starttime="20200402 15:45:00.592" endtime="20200402 15:45:16.950"></status>
+</suite>
+<status status="PASS" starttime="20200402 15:45:00.519" endtime="20200402 15:45:16.950"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Robotframwork Atda">Robotframwork Atda</stat>
+<stat pass="1" fail="0" id="s1-s1" name="Testsuites">Robotframwork Atda.Testsuites</stat>
+<stat pass="1" fail="0" id="s1-s1-s1" name="Atda Web">Robotframwork Atda.Testsuites.Atda Web</stat>
+<stat pass="1" fail="0" id="s1-s1-s1-s1" name="Account Testsuite Testbed">Robotframwork Atda.Testsuites.Atda Web.Account Testsuite Testbed</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
