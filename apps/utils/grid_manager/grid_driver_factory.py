@@ -38,7 +38,7 @@ class grid_driver_factory:
         N/A
 
     """
-    def create_driver(self, command_executor = 'http://127.0.0.1:4444/wd/hub', desired_capabilities:dict = None):
+    def create_driver(self, command_executor = 'http://10.128.224.24:4444/wd/hub', desired_capabilities:dict = None):
         """Generating remote driver.
         
             Args:

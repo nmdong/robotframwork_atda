@@ -4,36 +4,40 @@ Created on Mar 31, 2020
 @author: nmdong
 login page
 '''
+import time
 from robot.api import logger
-
 from selenium.webdriver.common.by import By
 
 class login_page():
     '''this class will define all locators and function on Login Page'''
     
     def __init__(self):
-        self.USERNAME_TF = "username"
-        self.PASSWORD_TF = "password"
-        self.LOGIN_BTN = "//button[@class='mb-4 auth-button btn btn-primary']"   
-        self.PROJECT_TITLE ="//div[@class='project-header row']"
-        self.CREATE_ACCOUNT_BTN ="//a[@href=/register']" 
-        self.URL_TITLE_TXT = "React App"
-        self.INVALID_USERNAME_TXT ="//div[@class='mb-3 input-group']//div[@class='help-block invalid-feedback']"
-        self.INVALID_PASSWORD_TXT ="//div[@class='mb-4 input-group']//div[@class='help-block invalid-feedback']" 
-        self.INVALID_USERNAME_PASSWORD_TXT ="//*[text()='Username or Password invalid']"   
-  
-    def input_username_login(self, driver, username):
-        element = driver.find_element(By.NAME, self.USERNAME_TF)
-        element.send_keys(username)
-        logger.info("input username in login page successfully")
-         
-    def input_password_login(self, driver, password):
-        element = driver.find_element(By.NAME, self.PASSWORD_TF)
-        element.send_keys(password)
-        logger.info("input password successfully")
-         
-    def click_login_button(self, driver):
-        element = driver.find_element(By.XPATH, self.LOGIN_BTN)
-        element.click()
-        logger.info("click login button successfully")
+        self.LOGIN_TXT = "h1.auth-header" #css selector
+        self.USERNAME_TF = "input.username" #css selector
+        self.PASSWORK_TF = "input.password.auth-input.form-control" #css selector
+        self.LOGIN_BTN = "button.mb-4.auth-button.btn.btn-primary"
+        
+    def loading_login_page(self, driver):
+        login_txt_ele = driver.find_elements(By.CSS_SELECTOR, self.LOGIN_TXT)        
+        i = 0
+        while i > 10:
+            time.sleep(1)
+            i = i+1
+            if login_txt_ele.size() > 0:
+                print("loading_login_page TRUE")
+                return True
+            else:
+                print("Not fount elemnets")
+        return False
     
+    def input_user_name(self, driver, userName):
+        user_name_tf = driver.find_element(By.CSS_SELECTOR, self.USERNAME_TF)
+        user_name_tf.send_keys(userName)
+        
+    def input_password(self, driver, password):
+        password_tf_ele = driver.find_element(By.CSS_SELECTOR, self.PASSWORK_TF)
+        password_tf_ele.send_keys(password)
+    
+    def click_login_btn(self, driver):
+        login_btn_ele = driver.find_element(By.CSS_SELECTOR, self.LOGIN_BTN)
+        login_btn_ele.click()

@@ -3,6 +3,7 @@
     <configVersion>2</configVersion>
     <relativeTo>WORKSPACE</relativeTo>
     <referencedLibrary type="PYTHON" name="atda_web.atda_keywords" path="RobotFramework_ATDA/apps/atda_web/atda_keywords.py" dynamic="false"/>
+    <referencedLibrary type="PYTHON" name="atda_keywords" path="RobotFramework_ATDA/apps/atda_web/atda_keywords.py" dynamic="false"/>
     <pythonpath>
         <path location="D:\Trainning\robotframwork_atda\apps"/>
     </pythonpath>

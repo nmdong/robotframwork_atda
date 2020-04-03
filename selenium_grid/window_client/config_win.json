@@ -4,19 +4,16 @@
 	{
       "browserName": "chrome",
 	  "platform": "WINDOWS",
-      "maxInstances": 2,
       "seleniumProtocol": "WebDriver"
     },
 	{
       "browserName": "firefox",
 	  "platform": "WINDOWS",
-      "maxInstances": 2,
       "seleniumProtocol": "WebDriver"
     },
 		{
       "browserName": "MicrosoftEdge",
 	  "platform": "WINDOWS",
-      "maxInstances": 2,
       "seleniumProtocol": "WebDriver"
     }
   ],
@@ -25,7 +22,7 @@
   "port": 5555,
   "register": true,
   "registerCycle": 5000,
-  "hub": "http://127.0.0.1:4444",
+  "hub": "http://10.128.224.24:4444",
   "nodeStatusCheckTimeout": 5000,
   "nodePolling": 5000,
   "role": "node",

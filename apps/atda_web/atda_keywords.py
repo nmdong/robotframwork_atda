@@ -16,7 +16,9 @@ from robot.libraries.BuiltIn import BuiltIn
 from robot.api import logger
 from utils.grid_manager.selenium_driver import selenium_driver
 from utils.grid_manager.grid_driver_factory import grid_driver_factory
-from atda_web.pom.login_page import *
+from atda_web.pom.login_page import login_page
+from atda_web.pom.dash_board_page import dash_board_page
+from utils.common.selenium import selenium
 
 class atda_keywords(object):
     ROBOT_LIBRARY_SCOPE = 'GLOBAL'
@@ -103,4 +105,48 @@ class atda_keywords(object):
         print('*INFO:%d* Start function close_browser' % (time.time()*1000))
         self.driver.quit()
         print('*INFO:%d* close_browser successfully' % (time.time()*1000))
-
+    
+    def verify_login_user_atda(self):
+        """verify login user
+  
+        The method may be login user.
+        return: TRUE/FALSE
+  
+        ex: verify_login_user
+        """
+        print("Starting function")
+        return False
+    
+    def verify_login_page(self):
+        """verify login page
+  
+        The method may be checking login page.
+        return: TRUE/FALSE
+  
+        ex: verify_login_page
+        """
+        print("start function login page")
+        if login_page().loading_login_page(self.driver):
+            print("verify_login_page Pass")
+        else:
+            print("verify_login_page failed")
+        
+    def login_user_page(self, userName, password):
+        """login user
+  
+        The method may be login user.
+        return: TRUE/FALSE
+  
+        ex: verify_login_page
+        """
+        print("Start function login user " + userName)
+        login_page().input_user_name(self.driver, userName)
+        login_page().input_password(self.driver, password)
+        login_page().click_login_btn(self.driver)
+        
+    def verify_login_user(self):
+        print("Start function veridy login user")
+        if dash_board_page().loading_avatar_page(self.driver, 10):
+            print("verify_login_user passed ")
+        else:
+            print("verify_login_user failed")
