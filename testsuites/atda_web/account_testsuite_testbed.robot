@@ -10,4 +10,4 @@ ATDA001 Account page - Verify create a new account with invalid information - WI
     Log To Console    Hello    
     browser_01.Open Browser       ${url}
     Sleep    5s    
-    browser_01.Close Browser   
+    browser_01.Close Browser 
