@@ -22,7 +22,7 @@
   "port": 5555,
   "register": true,
   "registerCycle": 5000,
-  "hub": "http://10.128.224.24:4444",
+  "hub": "http://10.128.224.13:4444",
   "nodeStatusCheckTimeout": 5000,
   "nodePolling": 5000,
   "role": "node",

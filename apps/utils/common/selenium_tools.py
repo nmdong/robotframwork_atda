@@ -8,8 +8,10 @@ import time
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from builtins import len
 
-class selenium(object):
+class selenium_tools(object):
     '''
     classdocs
     '''
@@ -53,14 +55,15 @@ class selenium(object):
         return None
     
     #Checking if element exists
-    def isElement(self, driver, by, value):
+    def isElement(self, driver, byLocator, value):
         try:
-            print("<action>Checking if element exists")
-            element = driver.find_elements(by, value)
-            if element.size() > 0:
+            print("<action>Checking if element exists %s", value)
+            elements = driver.find_elements(byLocator, value)
+            if len(elements) > 0:
                 return True
+            print("Not found elements")
         except:
-            print("Not found elemnts")
+            print("isElement Failed")
         return False
     
     def click(self, driver, by, value):
@@ -165,18 +168,19 @@ class selenium(object):
             raise AssertionError("wait_until_element_clickable failed" + '\n\n\n')
     
     #Wait until element located by given locator appear.
-    def wait_for_element_appear(self, driver, by, value, time_out=10):
+    def wait_for_element_appear(self, driver, byLocator, value, time_out=10):
         try:
-            print("<action>Waiting for %s until element %s appears...")
+            print("<action>Waiting for % until element appears...")
             while(time_out>0):
                 time_out = time_out - 1
                 time.sleep(1)
-                if self.isElement(driver, by, value):
+                login_txt_ele = driver.find_elements(By.CSS_SELECTOR, value) 
+                if self.isElement(driver, byLocator, value):
                     return True
             print("Not found element")
         except:
             print("Send command failed with exception :" + str(sys.exc_info()[0]) + " :: " + str(sys.exc_info()[1]))
-            raise AssertionError("mouse_hover Failed" + '\n\n\n')
+            raise AssertionError("wait_for_element_appear Failed" + '\n\n\n')
         return False
         
     

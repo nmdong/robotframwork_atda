@@ -5,8 +5,10 @@ Created on Mar 31, 2020
 login page
 '''
 import time
+import sys
 from robot.api import logger
 from selenium.webdriver.common.by import By
+from utils.common.selenium_tools import selenium_tools
 
 class login_page():
     '''this class will define all locators and function on Login Page'''
@@ -18,17 +20,12 @@ class login_page():
         self.LOGIN_BTN = "button.mb-4.auth-button.btn.btn-primary"
         
     def loading_login_page(self, driver):
-        login_txt_ele = driver.find_elements(By.CSS_SELECTOR, self.LOGIN_TXT)        
-        i = 0
-        while i > 10:
-            time.sleep(1)
-            i = i+1
-            if login_txt_ele.size() > 0:
-                print("loading_login_page TRUE")
-                return True
-            else:
-                print("Not fount elemnets")
-        return False
+        if selenium_tools().wait_for_element_appear(driver, By.CSS_SELECTOR, self.LOGIN_TXT):
+            print("loading_login_page TRUE")
+            return True
+        else:
+            raise AssertionError("loading_login_page Failed" + '\n\n\n')
+            return False
     
     def input_user_name(self, driver, userName):
         user_name_tf = driver.find_element(By.CSS_SELECTOR, self.USERNAME_TF)
@@ -41,3 +38,4 @@ class login_page():
     def click_login_btn(self, driver):
         login_btn_ele = driver.find_element(By.CSS_SELECTOR, self.LOGIN_BTN)
         login_btn_ele.click()
+        

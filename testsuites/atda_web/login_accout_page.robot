@@ -13,8 +13,8 @@ Login user
     browser_01.Open Browser    ${url}
     
     Log To Console    2. Verify login page.  
-    browser_01.Login User Page    dong    123
     browser_01.Verify Login Page
+    browser_01.Login User Page    dong    123
     
     Log To Console    3. Login user.
     browser_01.Verify Login User

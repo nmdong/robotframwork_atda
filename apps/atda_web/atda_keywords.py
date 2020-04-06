@@ -18,7 +18,7 @@ from utils.grid_manager.selenium_driver import selenium_driver
 from utils.grid_manager.grid_driver_factory import grid_driver_factory
 from atda_web.pom.login_page import login_page
 from atda_web.pom.dash_board_page import dash_board_page
-from utils.common.selenium import selenium
+from utils.common.selenium_tools import selenium_tools
 
 class atda_keywords(object):
     ROBOT_LIBRARY_SCOPE = 'GLOBAL'
@@ -129,7 +129,7 @@ class atda_keywords(object):
         if login_page().loading_login_page(self.driver):
             print("verify_login_page Pass")
         else:
-            print("verify_login_page failed")
+            raise AssertionError("verify_login_page Failed" + '\n\n\n')
         
     def login_user_page(self, userName, password):
         """login user

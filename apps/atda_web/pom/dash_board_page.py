@@ -24,7 +24,7 @@ class dash_board_page(object):
         while i > 10:
             time.sleep(1)
             i = i+1
-            if avartar_ele.size() > 0:
+            if len(avartar_ele) > 0:
                 print("loading_avatar_page TRUE")
                 return True
             else:

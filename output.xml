@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.7.3 on win32)" generated="20200403 18:09:10.709" rpa="false">
+<robot generator="Robot 3.1.2 (Python 3.7.3 on win32)" generated="20200405 21:40:59.280" rpa="false">
 <suite id="s1" name="Robotframwork Atda" source="D:\Trainning\robotframwork_atda">
 <suite id="s1-s1" name="Testsuites" source="D:\Trainning\robotframwork_atda\testsuites">
 <suite id="s1-s1-s1" name="Atda Web" source="D:\Trainning\robotframwork_atda\testsuites\atda_web">
@@ -10,29 +10,38 @@
 <arguments>
 <arg>Start Login user</arg>
 </arguments>
-<status status="PASS" starttime="20200403 18:09:10.958" endtime="20200403 18:09:10.959"></status>
+<status status="PASS" starttime="20200405 21:40:59.538" endtime="20200405 21:40:59.539"></status>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <doc>Logs the given message to the console.</doc>
 <arguments>
 <arg>1. Launch new browser and go to address(http://10.128.220.229:81/login).</arg>
 </arguments>
-<status status="PASS" starttime="20200403 18:09:10.959" endtime="20200403 18:09:10.959"></status>
+<status status="PASS" starttime="20200405 21:40:59.539" endtime="20200405 21:40:59.539"></status>
 </kw>
 <kw name="Open Browser" library="browser_01">
 <doc>Launch web browser with ATDA server info</doc>
 <arguments>
 <arg>${url}</arg>
 </arguments>
-<msg timestamp="20200403 18:09:10.960" level="INFO">Creating driver for non Web app: ANY</msg>
-<status status="PASS" starttime="20200403 18:09:10.960" endtime="20200403 18:09:15.659"></status>
+<msg timestamp="20200405 21:40:59.540" level="INFO">Creating driver for non Web app: ANY</msg>
+<status status="PASS" starttime="20200405 21:40:59.539" endtime="20200405 21:41:03.884"></status>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <doc>Logs the given message to the console.</doc>
 <arguments>
 <arg>2. Verify login page.</arg>
 </arguments>
-<status status="PASS" starttime="20200403 18:09:15.660" endtime="20200403 18:09:15.660"></status>
+<status status="PASS" starttime="20200405 21:41:03.885" endtime="20200405 21:41:03.885"></status>
+</kw>
+<kw name="Verify Login Page" library="browser_01">
+<doc>verify login page</doc>
+<msg timestamp="20200405 21:41:04.912" level="INFO">start function login page
+&lt;action&gt;Waiting for % until element appears...
+&lt;action&gt;Checking if element exists %s h1.auth-header
+loading_login_page TRUE
+verify_login_page Pass</msg>
+<status status="PASS" starttime="20200405 21:41:03.885" endtime="20200405 21:41:04.912"></status>
 </kw>
 <kw name="Login User Page" library="browser_01">
 <doc>login user</doc>
@@ -40,42 +49,36 @@
 <arg>dong</arg>
 <arg>123</arg>
 </arguments>
-<msg timestamp="20200403 18:09:15.884" level="INFO">Start function login user dong</msg>
-<status status="PASS" starttime="20200403 18:09:15.660" endtime="20200403 18:09:15.884"></status>
-</kw>
-<kw name="Verify Login Page" library="browser_01">
-<doc>verify login page</doc>
-<msg timestamp="20200403 18:09:16.033" level="INFO">start function login page
-verify_login_page failed</msg>
-<status status="PASS" starttime="20200403 18:09:15.885" endtime="20200403 18:09:16.034"></status>
+<msg timestamp="20200405 21:41:05.095" level="INFO">Start function login user dong</msg>
+<status status="PASS" starttime="20200405 21:41:04.912" endtime="20200405 21:41:05.095"></status>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <doc>Logs the given message to the console.</doc>
 <arguments>
 <arg>3. Login user.</arg>
 </arguments>
-<status status="PASS" starttime="20200403 18:09:16.035" endtime="20200403 18:09:16.036"></status>
+<status status="PASS" starttime="20200405 21:41:05.096" endtime="20200405 21:41:05.096"></status>
 </kw>
 <kw name="Verify Login User" library="browser_01">
-<msg timestamp="20200403 18:09:16.202" level="INFO">Start function veridy login user
+<msg timestamp="20200405 21:41:05.110" level="INFO">Start function veridy login user
 verify_login_user failed</msg>
-<status status="PASS" starttime="20200403 18:09:16.037" endtime="20200403 18:09:16.203"></status>
+<status status="PASS" starttime="20200405 21:41:05.096" endtime="20200405 21:41:05.110"></status>
 </kw>
 <kw name="Close Browser" library="browser_01" type="teardown">
 <doc>Close web browser</doc>
-<msg timestamp="20200403 18:09:16.204" level="INFO">Start function close_browser</msg>
-<msg timestamp="20200403 18:09:16.294" level="INFO">close_browser successfully</msg>
-<status status="PASS" starttime="20200403 18:09:16.204" endtime="20200403 18:09:16.295"></status>
+<msg timestamp="20200405 21:41:05.110" level="INFO">Start function close_browser</msg>
+<msg timestamp="20200405 21:41:05.240" level="INFO">close_browser successfully</msg>
+<status status="PASS" starttime="20200405 21:41:05.110" endtime="20200405 21:41:05.241"></status>
 </kw>
-<status status="PASS" starttime="20200403 18:09:10.958" endtime="20200403 18:09:16.295" critical="yes"></status>
+<status status="PASS" starttime="20200405 21:40:59.538" endtime="20200405 21:41:05.241" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20200403 18:09:10.776" endtime="20200403 18:09:16.296"></status>
+<status status="PASS" starttime="20200405 21:40:59.353" endtime="20200405 21:41:05.242"></status>
 </suite>
-<status status="PASS" starttime="20200403 18:09:10.774" endtime="20200403 18:09:16.299"></status>
+<status status="PASS" starttime="20200405 21:40:59.351" endtime="20200405 21:41:05.244"></status>
 </suite>
-<status status="PASS" starttime="20200403 18:09:10.772" endtime="20200403 18:09:16.306"></status>
+<status status="PASS" starttime="20200405 21:40:59.349" endtime="20200405 21:41:05.246"></status>
 </suite>
-<status status="PASS" starttime="20200403 18:09:10.751" endtime="20200403 18:09:16.308"></status>
+<status status="PASS" starttime="20200405 21:40:59.328" endtime="20200405 21:41:05.247"></status>
 </suite>
 <statistics>
 <total>
